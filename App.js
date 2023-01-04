@@ -1,7 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, PermissionsAndroid } from 'react-native';
+import Contacts from 'react-native-contacts';
 
 export default function App() {
+
+  const getAddress = () => {
+    Contacts.getAll().then(contacts => {
+      console.log(contacts)
+    })
+  }
+
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
